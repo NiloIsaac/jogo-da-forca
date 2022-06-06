@@ -111,10 +111,9 @@ function comparaListas(letra) {
         chances--
         imagemForca();
 
-        if(chances == 0){
-            abreModal("Fim de jogo","A reposta era <br>" + palavraSecretaSorteada);
+        if (chances == 0) {
+            abreModal("Fim de jogo", "A reposta era <br>" + palavraSecretaSorteada);
         }
-        //averiguar quantas chances ainda tem e colocar em mensagem
     }
     else {
         for (i = 0; i < palavraSecretaSorteada.length; i++) {
@@ -137,29 +136,29 @@ function comparaListas(letra) {
 function imagemForca() {
     switch (chances) {
         case 5:
-            document.getElementById("imagem").style.background = "url('./img/forca1.png')";
+            document.getElementById("imagem").style.backgroundImage = "url('./img/forca1.png')";
             break;
         case 4:
-            document.getElementById("imagem").style.background = "url('./img/forca2.png')";
+            document.getElementById("imagem").style.backgroundImage = "url('./img/forca2.png')";
             break;
         case 3:
-            document.getElementById("imagem").style.background = "url('./img/forca3.png')";
+            document.getElementById("imagem").style.backgroundImage = "url('./img/forca3.png')";
             break;
         case 2:
-            document.getElementById("imagem").style.background = "url('./img/forca4.png')";
+            document.getElementById("imagem").style.backgroundImage = "url('./img/forca4.png')";
             break;
         case 1:
-            document.getElementById("imagem").style.background = "url('./img/forca5.png')";
+            document.getElementById("imagem").style.backgroundImage = "url('./img/forca5.png')";
             break;
         case 0:
-            document.getElementById("imagem").style.background = "url('./img/forca.png')";
+            document.getElementById("imagem").style.backgroundImage = "url('./img/forca.png')";
             break;
         default:
-            document.getElementById("imagem").style.background = "url('./img/forca0.png')";
-            break; 
+            document.getElementById("imagem").style.backgroundImage = "url('./img/hangman.png')";
+            break;
     }
 }
-function abreModal( titulo, mensagem){
+function abreModal(titulo, mensagem) {
     let modalTitulo = document.getElementById("exampleModalLabel");
     modalTitulo.innerText = titulo;
 
@@ -167,11 +166,13 @@ function abreModal( titulo, mensagem){
     modalBody.innerHTML = mensagem;
 
     $("#myModal").modal({
-    show: true
+        show: true
     });
 
 }
 let restart = document.querySelector("#restart")
-restart.addEventListener("click", function(){
+restart.addEventListener("click", function () {
     location.reload()
-});
+}
+
+);
